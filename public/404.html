@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shortify - Shortening URLs since 2020</title>
+    <link
+      rel="stylesheet"
+      href="https://jenil.github.io/bulmaswatch/lux/bulmaswatch.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Shortify
+          </h1>
+          <h2 class="subtitle">
+            Shortening URLs since 2020.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <h1 class="title is-1 is-lowercase is-size-3" style="text-align: center; padding-top: 150px;"><span id="name" class="has-text-danger"></span> was not found.You can create <a href="/">here</a></h1>
+    <script>
+      const name = new URLSearchParams(window.location.search).get('name');
+      document.querySelector('#name').textContent = name;
+    </script>
+
+  </body>
+</html>

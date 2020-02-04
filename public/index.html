@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shortify - Shortening URLs since 2020</title>
+    <link
+      rel="stylesheet"
+      href="https://jenil.github.io/bulmaswatch/lux/bulmaswatch.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Shortify
+          </h1>
+          <h2 class="subtitle">
+            Shortening URLs since 2020.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <main id="app">
+      <form v-if="!success" @submit.prevent="createShortify">
+        <div v-if="error" class="notification is-danger">
+          {{error}}
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">URL </label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input
+                  v-model="url"
+                  class="input is-large"
+                  type="text"
+                  placeholder="https://example.com"
+                  required
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Shortify/</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input
+                  v-model="name"
+                  class="input is-large"
+                  type="text"
+                  placeholder="Super-Catchy"
+                  required
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shortify-button">
+          <button type="submit" class="button is-success is-rounded">
+            Shortify
+          </button>
+        </div>
+      </form>
+      <h1
+        v-if="success"
+        class="title is-1"
+        target="_blank"
+        style="text-align: center;"
+      >
+        <a :href="'/'+ name">https://shortify/{{name}}</a>
+      </h1>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
