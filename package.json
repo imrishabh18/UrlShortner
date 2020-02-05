@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "build": "node index.js",
-    "now-build": "npm run build"
+    "build": "tsc -p ./src",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.10.0"
   },
   "keywords": [],
   "author": "",
