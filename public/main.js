@@ -20,10 +20,8 @@ new Vue({
                     'Content-Type': 'application/json' //Tells the content is JSON
                 }
             }).then(response => {
-                return response.text();
-            }).then(text => {
-                console.log(text);
-            }).then(results => {
+                return response.json();
+            })then(results => {
                 if(results.isJoi){
                     //there was an error
                     this.error = results.details.map(detail => detail.message).join('. ');//details is an array having message object`
