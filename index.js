@@ -11,6 +11,11 @@ app.use(express.static('./public')); //If a request comes with '/' check if file
 // app.get('/', (req, res) => {
 //     res.send('Hello, World !!');
 // });
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
+});
 
 app.get('/:name', async (req, res) => {
     const shorty = await urls.find(req.params.name);//FInding the parameter name in database
@@ -20,7 +25,6 @@ app.get('/:name', async (req, res) => {
         res.redirect(`/404.html?name=${req.params.name}`);
     }
 });
-
 
 
 app.post('/api/shorty', async (req, res) => {
@@ -33,8 +37,3 @@ app.post('/api/shorty', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
-});

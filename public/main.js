@@ -17,7 +17,7 @@ new Vue({
                 method: 'POST',
                 body: JSON.stringify(body),
                 headers: {
-                    'Content-Type': 'application/json' //Tells the content is JSON
+                    'content-type': 'application/json' //Tells the content is JSON
                 }
             }).then(response => {
                 return response.json();
