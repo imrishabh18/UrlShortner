@@ -20,8 +20,9 @@ new Vue({
                     'Content-Type': 'application/json' //Tells the content is JSON
                 }
             }).then(response => {
-                console.log(response);
-                return response.json();
+                return response.text();
+            }).then(text => {
+                console.log(text);
             }).then(results => {
                 if(results.isJoi){
                     //there was an error
