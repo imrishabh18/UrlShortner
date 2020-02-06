@@ -21,7 +21,7 @@ new Vue({
                 }
             }).then(response => {
                 return response.json();
-            })then(results => {
+            }).then(results => {
                 if(results.isJoi){
                     //there was an error
                     this.error = results.details.map(detail => detail.message).join('. ');//details is an array having message object`
