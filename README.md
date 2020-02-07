@@ -2,8 +2,8 @@
 
 A place where you can shorten the url for the given website.
 
-It is a full stack app.
+It is a full stack app.And the tech stack used here are,
 The data base used here is mongoDB atlas.
-Backened is an express app.
-Server is of Nodejs.
+Backened is of expressjs.
 Frontend is of Vuejs.
+Deployed in Heroku.
